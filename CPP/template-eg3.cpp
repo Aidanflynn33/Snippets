@@ -1,4 +1,5 @@
 #include <iostream>
+#include <functional>
 
 template<typename T>
 class Memoizer
@@ -31,12 +32,12 @@ int main() {
     // create memoizer
     auto memoizer = Memoizer<int>{expensive_calculation};
 
-    std::cout << amount_of_calls;
+    std::cout << amount_of_calls << std::endl;
 
     auto result1 = memoizer.get_value();
     auto result2 = memoizer.get_value();
 
-    std::cout << amount_of_calls;
+    std::cout << amount_of_calls << std::endl;
 
 	return 0;
 }

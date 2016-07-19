@@ -14,13 +14,13 @@ int main() {
     auto fn1 = [&] { fn1_called = true; };
     auto fn2 = [&] { fn2_called = true; };
 
-    std::cout << fn1_called;
-    std::cout << fn2_called;
+    std::cout << fn1_called << std::endl;
+    std::cout << fn2_called << std::endl;
 
     fn1();
 
-    std::cout << fn1_called;
-    std::cout << fn2_called;
+    std::cout << fn1_called << std::endl;
+    std::cout << fn2_called << std::endl;
 
     return 0;
 }
