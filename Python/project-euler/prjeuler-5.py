@@ -19,10 +19,10 @@ def smallestMultiple(min, max):
 	
 	print(number)
 
-#smallestMultiple(0, 5)
-#smallestMultiple(0, 10)
-#smallestMultiple(0, 15)
-#smallestMultiple(0, 20)
+smallestMultiple(0, 5)
+smallestMultiple(0, 10)
+smallestMultiple(0, 15)
+smallestMultiple(0, 20)
 
 
 # Mathematical Method
