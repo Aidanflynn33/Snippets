@@ -3,5 +3,5 @@
 # Find the sum of all the multiples of 3 or 5 below 1000.
 
 values = list(filter(lambda x: (x % 3 == 0 or x % 5 == 0), list(range(0, 1000))))
-# print("All values: %s" % values)
+print("All values: %s" % values)
 print("Sum: %s" % sum(values))
