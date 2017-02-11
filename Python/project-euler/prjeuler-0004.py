@@ -8,10 +8,6 @@ factor2 = largest3DigitNumber
 product = 0
 textual = ""
 
-
-# wrong result
-# - need two loops
-
 while factor1 > 0:
 	while factor2 > 0:
 		tmp = factor1 * factor2
