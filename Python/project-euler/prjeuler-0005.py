@@ -23,6 +23,7 @@ smallestMultiple(0, 5)
 smallestMultiple(0, 10)
 smallestMultiple(0, 15)
 smallestMultiple(0, 20)
+smallestMultiple(0, 100)
 
 
 # Mathematical Method
@@ -64,4 +65,4 @@ LCM(0, 5)
 LCM(0, 10)
 LCM(0, 15)
 LCM(0, 20)
-LCM(0, 1000)
+LCM(0, 100)

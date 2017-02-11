@@ -18,9 +18,13 @@ def findBruteForce(tripletFor):
 				r2 = a**2 + b**2
 				r3 = c**2
 				if r1 == tripletFor and r2 == r3:
-					print("%d %d %d" % (a, b, c))
+					print("%d + %d  = %d" % (a**2, b**2, c**2))
+					print("%d + %d + %d = %d" % (a, b, c, a+b+c))
+					print("%d * %d * %d = %d" % (a, b, c, a*b*c))
+					print("%d < %d < %d" % (a, b, c))
 					return
 
+findBruteForce(50)
 findBruteForce(1000)
 
 # Mathematical Method
@@ -42,7 +46,11 @@ def findViaEuclid1(tripletFor):
 					c = k*(m**2+n**2)
 					r = a + b + c
 					if r == tripletFor and a < b and b < c:
-	 					print("%d %d %d" % (a, b, c))
-	 					return
+						print("%d + %d  = %d" % (a**2, b**2, c**2))
+						print("%d + %d + %d = %d" % (a, b, c, a+b+c))
+						print("%d * %d * %d = %d" % (a, b, c, a*b*c))
+						print("%d < %d < %d" % (a, b, c))
+						return
 
+findViaEuclid1(50)
 findViaEuclid1(1000)

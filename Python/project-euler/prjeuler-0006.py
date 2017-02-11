@@ -19,6 +19,7 @@ def diffSumOfSquaresAndSquareOfSums(number):
 	print(result)
 
 diffSumOfSquaresAndSquareOfSums(10)
+diffSumOfSquaresAndSquareOfSums(100)
 diffSumOfSquaresAndSquareOfSums(10000000)
 
 
@@ -45,4 +46,5 @@ def sum_square_difference(n):
 	return sum_of_n(n)**2 - sum_of_squares(n)
 
 print(sum_square_difference(10))
+print(sum_square_difference(100))
 print(sum_square_difference(10000000))

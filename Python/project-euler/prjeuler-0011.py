@@ -51,42 +51,36 @@ rows = len(numbers.replace('\t', '').split('\n'))
 columns = len(numbers.replace('\t', '').split('\n')[0].split(' '))
 numbersOneLine = list(map(int, numbers.replace('\t', '').replace('\n', ' ').split(' ')))
 
-upleftdownright = 0
-upleftdownrightstr = ""
-downleftupright = 0
-downleftuprightstr = ""
-lefttoright = 0
-lefttorightstr = ""
-uptodown = 0
-uptodownstr = ""
+intResults = [0, 0, 0, 0]
+strResults = ["", "", "", ""]
 
 for r in range(rows - numAdjacents):
 	for c in range(columns - numAdjacents):
 		tmp = numbersOneLine[(r+0)*columns + c+0] * numbersOneLine[(r+1)*columns + c+1] * numbersOneLine[ (r+2)*columns + c+2] * numbersOneLine[(r+3)*columns + c+3]
-		if tmp > upleftdownright:
-			upleftdownright = tmp
-			upleftdownrightstr = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+1)*columns + c+1]) + " * " + str(numbersOneLine[(r+2)*columns + c+2]) + " * " + str(numbersOneLine[(r+3)*columns + c+3]) + " = "
+		if tmp > intResults[0]:
+			intResults[0] = tmp
+			strResults[0] = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+1)*columns + c+1]) + " * " + str(numbersOneLine[(r+2)*columns + c+2]) + " * " + str(numbersOneLine[(r+3)*columns + c+3]) + " = "
 
 		tmp = numbersOneLine[(r+3)*columns + c+0] * numbersOneLine[(r+2)*columns + c+1] * numbersOneLine[(r+1)*columns + c+2] * numbersOneLine[(r+0)*columns + c+3]
-		if tmp > downleftupright:
-			downleftupright = tmp
-			downleftuprightstr = str(numbersOneLine[(r+3)*columns + c+0]) + " * " + str(numbersOneLine[(r+2)*columns + c+1]) + " * " + str(numbersOneLine[(r+1)*columns + c+2]) + " * " + str(numbersOneLine[(r+0)*columns + c+3]) + " = "
+		if tmp > intResults[1]:
+			intResults[1] = tmp
+			strResults[1] = str(numbersOneLine[(r+3)*columns + c+0]) + " * " + str(numbersOneLine[(r+2)*columns + c+1]) + " * " + str(numbersOneLine[(r+1)*columns + c+2]) + " * " + str(numbersOneLine[(r+0)*columns + c+3]) + " = "
 
 for r in range(rows):
 	for c in range(columns - numAdjacents):
 		tmp = numbersOneLine[(r+0)*columns + c+0] * numbersOneLine[(r+0)*columns + c+1] * numbersOneLine[(r+0)*columns + c+2] * numbersOneLine[(r+0)*columns + c+3]
-		if tmp > lefttoright:
-			lefttoright = tmp
-			lefttorightstr = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+0)*columns + c+1]) + " * " + str(numbersOneLine[(r+0)*columns + c+2]) + " * " + str(numbersOneLine[(r+0)*columns + c+3]) + " = "
+		if tmp > intResults[2]:
+			intResults[2] = tmp
+			strResults[2] = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+0)*columns + c+1]) + " * " + str(numbersOneLine[(r+0)*columns + c+2]) + " * " + str(numbersOneLine[(r+0)*columns + c+3]) + " = "
 
 for r in range(rows - numAdjacents):
 	for c in range(columns):
 		tmp = numbersOneLine[(r+0)*columns + c+0] * numbersOneLine[(r+1)*columns + c+0] * numbersOneLine[(r+2)*columns + c+0] * numbersOneLine[(r+3)*columns + c+0]
-		if tmp > uptodown:
-			uptodown = tmp
-			uptodownstr = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+1)*columns + c+0]) + " * " + str(numbersOneLine[(r+2)*columns + c+0]) + " * " + str(numbersOneLine[(r+3)*columns + c+0]) + " = "
+		if tmp > intResults[3]:
+			intResults[3] = tmp
+			strResults[3] = str(numbersOneLine[(r+0)*columns + c+0]) + " * " + str(numbersOneLine[(r+1)*columns + c+0]) + " * " + str(numbersOneLine[(r+2)*columns + c+0]) + " * " + str(numbersOneLine[(r+3)*columns + c+0]) + " = "
 
-print (upleftdownrightstr + str(upleftdownright))
-print (downleftuprightstr + str(downleftupright))
-print (lefttorightstr + str(lefttoright))
-print (uptodownstr + str(uptodown))
+for i in range(len(intResults)):
+	print(strResults[i] + str(intResults[i]))
+
+print ("greatest: %d" % max(intResults))
